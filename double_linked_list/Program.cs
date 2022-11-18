@@ -25,7 +25,7 @@ namespace double_linked_list
         {
             int nim;
             string nm;
-            Console.WriteLine("\nEnter the roll number of the student: ");
+            Console.Write("\nEnter the roll number of the student: ");
             nim = Convert.ToInt32(Console.ReadLine());
             Console.Write("\nEnter the name of the students: ");
             nm = Console.ReadLine();
@@ -36,7 +36,7 @@ namespace double_linked_list
             // Check if the list empty
             if (START == null || nim <= START.noMhs)
             {
-                if ((START != null) && (nim == START.noMhs));
+                if ((START != null) && (nim == START.noMhs))
                 {
                     Console.WriteLine("\nDuplicate number not allowed");
                     return;
@@ -70,6 +70,14 @@ namespace double_linked_list
             {
                 newNode.next = null;
                 previous.next = newNode;
+                return;
+            }
+            newNode.next = START;
+            if (START != null)
+                START.prev = newNode;
+            {
+                newNode.next = null;
+                START = newNode;
                 return;
             }
             current.prev = newNode;
@@ -123,10 +131,10 @@ namespace double_linked_list
                 Console.WriteLine("\nList is empty");
             else
             {
-                Console.WriteLine("\nRecord in the ascending order of" + "Roll number are:\n");
+                Console.WriteLine("\nRecord in the ascending order of" + " Roll number are:\n");
                 Node currentNode;
                 for (currentNode = START; currentNode != null; currentNode = currentNode.next)
-                    Console.Write(currentNode.noMhs + currentNode.name + "\n");
+                    Console.WriteLine(currentNode.noMhs + " " + currentNode.name + "\n");
             }
         }
         public void descending()
@@ -135,7 +143,7 @@ namespace double_linked_list
                 Console.WriteLine("\nList is empty");
             else
             {
-                Console.WriteLine("\nRecord in the descending order of" + "Roll number are:\n");
+                Console.WriteLine("\nRecord in the descending order of" + " Roll number are:\n");
                 Node currentNode;
                 // Membawa currentNode ke node paling belakang
                 currentNode = START;
@@ -146,7 +154,7 @@ namespace double_linked_list
                 // Membaca data dari last node ke first node
                 while (currentNode != null)
                 {
-                    Console.Write(currentNode.noMhs + " " + currentNode.name + "\n");
+                    Console.WriteLine(currentNode.noMhs + " " + currentNode.name + "\n");
                     currentNode = currentNode.prev;
                 }
             }
@@ -190,7 +198,7 @@ namespace double_linked_list
                                 if (obj.dellNode(rollNo) == false)
                                     Console.WriteLine("Record not found");
                                 else
-                                    Console.WriteLine("Record with roll number " + rollNo + "deleted\n");
+                                    Console.WriteLine("Record with roll number " + rollNo + " is deleted\n");
                             }
                             break;
                         case '3':
