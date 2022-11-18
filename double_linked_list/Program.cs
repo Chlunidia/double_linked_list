@@ -30,6 +30,34 @@ namespace double_linked_list
             Node newNode = new Node();
             newNode.noMhs = nim;
             newNode.name = nm;
+
+            // Check if the list empty
+            if (START == null || nim <= START.noMhs)
+            {
+                if ((START != null) && (nim == START.noMhs));
+                {
+                    Console.WriteLine("\nDuplicate number not allowed");
+                    return;
+                }
+                newNode.next = START;
+                if (START != null) 
+                    START.prev = newNode;
+                newNode.next = null;
+                START = newNode;
+                return;
+            }
+            /* If the node is to be inserted at beetwen two Node */
+            Node previous, current;
+            for (current = previous = START; 
+                 current != null && nim >= current.noMhs; 
+                 previous = current, current = current.next)
+            {
+                if (nim == current.noMhs)
+                {
+                    Console.WriteLine("\nDuplicate roll numbers not allowed");
+                    return;
+                }
+            }
         }
     }
     class Program
