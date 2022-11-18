@@ -127,6 +127,28 @@ namespace double_linked_list
                     Console.Write(currentNode.noMhs + currentNode.name + "\n");
             }
         }
+        public void descending()
+        {
+            if (listEmpty())
+                Console.WriteLine("\nList is empty");
+            else
+            {
+                Console.WriteLine("\nRecord in the descending order of" + "Roll number are:\n");
+                Node currentNode;
+                // Membawa currentNode ke node paling belakang
+                currentNode = START;
+                while (currentNode.next != null)
+                {
+                    currentNode = currentNode.next;
+                }
+                // Membaca data dari last node ke first node
+                while (currentNode != null)
+                {
+                    Console.Write(currentNode.noMhs + " " + currentNode.name + "\n");
+                    currentNode = currentNode.prev;
+                }
+            }
+        }
     }
     class Program
     {
