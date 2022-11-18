@@ -18,7 +18,9 @@ namespace double_linked_list
     class DoubleLinkedList
     {
         Node START;
+
         // Constructor
+
         public void addNode()
         {
             int nim;
@@ -98,7 +100,7 @@ namespace double_linked_list
             // Node between two nodes in the list 
             if (current == START)
             {
-                START = current.next;
+                START = START.next;
                 if (START != null)
                     START.prev = null;
                 return true;
@@ -154,7 +156,7 @@ namespace double_linked_list
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World! ");
+
         }
     }
 }
